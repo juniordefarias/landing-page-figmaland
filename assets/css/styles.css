@@ -61,6 +61,16 @@ h1 {
 
 p {
   text-align: center;
+  line-height: 1.5;
+}
+
+/* Class CSS */
+.section {
+  padding: 50px 0 100px;
+}
+
+.section-title {
+  margin-bottom: 1.5rem;
 }
 
 /* Layout */
@@ -213,6 +223,51 @@ button:hover {
   background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 95%, rgba(0,0,0,1) 100%);
 }
 
+/* Features */
+.features {
+  margin-top: 6.25rem; /* 100px */
+}
+
+.features__description {
+  margin-bottom: 1.625rem; /* 26px */
+  max-width: 582px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.features__cover {
+  display: grid;
+  gap: 27px;
+}
+
+.features__list {
+  display: grid;
+  gap: 1.625rem; /* 3.75rem; 60px */
+
+  padding: 20px;
+}
+
+.feature__item {
+  height: 100%;
+}
+
+.features__item__title {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem; /* 14px */
+  margin-bottom: 1rem; /* 20px */
+} 
+
+.features__item__title strong {
+  font-weight: var(--font-medium);
+  line-height: 1.5;
+}
+
+.features__item__description {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
 
 /* Media queries */
 @media screen and (max-width: 435px) {
@@ -220,7 +275,6 @@ button:hover {
     display: none;
   }
 }
-
 @media screen and (min-width: 820px) {
   .nav__list {
     display: flex;
@@ -251,5 +305,19 @@ button:hover {
 
   .home__action {
     flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 876px) {
+  .features__cover {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .features__list {
+    margin: 0;
+  }
+
+  .features__description {
+    margin-bottom: 80px;
   }
 }
