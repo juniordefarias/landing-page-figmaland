@@ -8,6 +8,7 @@
   --first-color: #4452FE;
   --first-color-alt: #0013FE;
   --text-color: #FFF;
+  --second-text-color: #5C5C5C;
   --body-color: #181818;
 
   --body-font: 'Rubik', sans-serif;;
@@ -173,12 +174,14 @@ button:hover {
 .button--main {
   background-color: var(--first-color);
   border: 1px solid var(--first-color);
+
+  box-shadow: 0px 4px 31px rgba(0, 0, 0, 0.15);
 }
 
 .button--main:hover {
   background-color: var(--first-color-alt);
   border: 1px solid var(--first-color-alt);
-  color: inherit;
+  color: #fff;
 }
 
 /* Home */
@@ -189,6 +192,9 @@ button:hover {
 
 .home__title {
   margin-bottom: 1rem;
+  max-width: 709px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .home__description {
@@ -268,11 +274,59 @@ button:hover {
   line-height: 1.5;
 }
 
+/* Contents */
+.contents__description {
+  max-width: 571px;
+  margin: auto;
+}
+
+.contents__cover {
+  margin-top: 2.75rem;
+  display: grid;
+  gap: 2.25rem;
+}
+
+.contents__item {
+  background-color: #fff;
+  border-radius: 10px;
+  color: #000;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  padding: 2.5rem; /* 40px */
+}
+
+.contents__item__title {
+  font-size: 1.25rem; /* 20px */
+  margin-bottom: 2.25rem; /* 36px */
+}
+
+.contents__item__description {
+  color: var(--second-text-color);
+  max-width: 268px;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: var(--small-font-size);
+}
+
+.contents__item__action {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 /* Media queries */
 @media screen and (max-width: 435px) {
   .nav__button {
     display: none;
+  }
+
+  .contents {
+    width: calc(100% - 90px);
   }
 }
 @media screen and (min-width: 820px) {
@@ -319,5 +373,9 @@ button:hover {
 
   .features__description {
     margin-bottom: 80px;
+  }
+
+  .contents__cover {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
