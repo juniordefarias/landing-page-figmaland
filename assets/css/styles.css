@@ -424,7 +424,6 @@ button:hover {
 }
 
 /* Opentype */
-
 .opentype__container {
   width: 100%;
   background-color: #1E1E1E;
@@ -450,8 +449,84 @@ button:hover {
   justify-content: center;
 }
 
-/* Media queries */
+/* Footer */
+.footer {
+  padding: 100px 35px;
+}
 
+.footer__container {
+  display: flex;
+  flex-direction: column;
+  gap: 4.6875rem;
+  max-width: 1031px;
+}
+ 
+.footer__column:first-of-type {
+  display: grid;
+  gap: 4.6875rem; /* 75px */
+}
+
+.footer__data strong {
+  display: block;
+  margin-bottom: 2.5rem;
+}
+
+.footer__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1.125rem;
+}
+
+.footer__menu a {
+  color: #fff;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+  transition: .2s;
+}
+
+.footer__menu a:hover {
+  color: var(--first-color);
+}
+
+.footer__column:last-of-type {
+  display: flex;
+  flex-direction: column;
+  gap: 1.125rem;
+  max-width: 319px;
+}
+
+.footer__info {
+  display: flex;
+  align-items: center;
+}
+
+.footer__info__cover {
+  width: 32px;
+  display: flex;
+  justify-content: center;
+  margin-right: 1.125rem;
+}
+
+.footer__info small {
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+}
+
+.footer__social-media {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer__social-media svg path {
+  transition: .2s;
+}
+
+.footer__social-media svg:hover path {
+  fill: var(--first-color);
+}
+
+
+/* Media queries */
 @media screen and (max-width: 435px) {
   .nav__button {
     display: none;
@@ -460,10 +535,6 @@ button:hover {
   .bd-container {
     width: calc(100% - 90px);
   }
-
-  /* .contents, .gallery, .partners, .testimonials {
-    width: calc(100% - 90px);
-  } */
 
   .partners__cover {
     grid-template-columns: repeat(2, 1fr);
@@ -484,6 +555,10 @@ button:hover {
   .gallery__cover {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer__column:first-of-type {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -537,7 +612,6 @@ button:hover {
   .testimonials__item:not(:first-of-type) {
     margin-top: 1.5rem;
   }
-
 }
 
 @media screen and (min-width: 876px) {
@@ -612,5 +686,13 @@ button:hover {
   .opentype__cover img {
     width: 100%;
     height: initial;
+  }
+
+  .footer__container {
+    flex-direction: row;
+  }
+
+  .footer__column:first-of-type {
+    flex: 1;
   }
 }
